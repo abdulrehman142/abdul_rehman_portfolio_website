@@ -18,9 +18,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
-
-  const hireMeMailto = `mailto:mdyusufcse096@iesuniversity.ac.in?subject=Hiring Inquiry – Portfolio&body=Hello Md Yusuf,%0D%0A%0D%0AI came across your portfolio and would like to discuss an opportunity with you.%0D%0A%0D%0ALooking forward to hearing from you.%0D%0ABest Regards,`;
+  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Experience', 'Education', 'Contact'];
 
   return (
     <nav 
@@ -36,7 +34,7 @@ const Navbar = () => {
         
         {/* Left Side: Logo/Name */}
         <div className="flex items-center">
-          <a href="#" className="text-white text-2xl font-black tracking-tight whitespace-nowrap">
+          <a href="#home" className="text-white text-2xl font-black tracking-tight whitespace-nowrap">
             {personalInfo.brandName}<span className="text-red-500">.</span>
           </a>
         </div>
@@ -59,7 +57,7 @@ const Navbar = () => {
         {/* Right Side: CTA Button */}
         <div className="hidden md:block">
           <a 
-            href={hireMeMailto}
+            href="#contact"
             className="px-6 py-2.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300 backdrop-blur-md"
           >
             Hire Me
@@ -102,7 +100,7 @@ const Navbar = () => {
           ))}
           <div className="pt-4 pb-2">
              <a 
-               href={hireMeMailto}
+               href="#contact"
                onClick={() => setIsOpen(false)} 
                className="inline-block px-6 py-3 rounded-full bg-white text-[#ff2a2a] font-black hover:bg-black hover:text-white transition-colors w-full text-center shadow-lg"
              >

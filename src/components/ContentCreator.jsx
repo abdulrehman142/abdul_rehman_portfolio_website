@@ -60,7 +60,7 @@ const ContentCreator = () => {
           {contentCreation.categories.map((category, index) => (
             <a 
               key={category.title}
-              href={socialLinks.instagram}
+              href={socialLinks.portfolio}
               target="_blank"
               rel="noopener noreferrer"
               className="block"
@@ -73,15 +73,15 @@ const ContentCreator = () => {
         {/* Instagram CTA */}
         <div data-aos="fade-up" data-aos-delay="400" className="mt-16 flex justify-center">
           <a
-            href={socialLinks.instagram}
+            href={socialLinks.portfolio}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 px-8 py-4 rounded-full bg-[#ff2a2a] text-white font-bold text-lg hover:bg-red-600 hover:shadow-[0_0_30px_rgba(255,42,42,0.4)] transition-all duration-500 group"
           >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm7.93 9h-3.05a15.94 15.94 0 00-1.19-5.03A8.03 8.03 0 0119.93 11zM12 4c.84 1.2 2.1 3.85 2.42 7H9.58C9.9 7.85 11.16 5.2 12 4zM8.31 5.97A15.94 15.94 0 007.12 11H4.07a8.03 8.03 0 014.24-5.03zM4.07 13h3.05c.16 1.83.6 3.52 1.19 5.03A8.03 8.03 0 014.07 13zm7.93 7c-.84-1.2-2.1-3.85-2.42-7h4.84c-.32 3.15-1.58 5.8-2.42 7zm3.69-1.97c.59-1.51 1.03-3.2 1.19-5.03h3.05a8.03 8.03 0 01-4.24 5.03z" />
             </svg>
-            Follow my Edits on Instagram
+            View Full Portfolio
             <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>

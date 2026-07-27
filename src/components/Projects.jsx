@@ -1,4 +1,3 @@
-import React from 'react';
 import { projects, socialLinks } from '../data/portfolioData';
 
 const GitHubIcon = () => (
@@ -74,19 +73,15 @@ const ProjectCard = ({ project, aosDelay }) => (
         )}
 
         {/* Live Demo (single) */}
-        {project.links.demo !== undefined && (
+        {project.links.demo && (
           <a 
-            href={project.links.demo || '#'}
-            target={project.links.demo ? "_blank" : undefined}
-            rel={project.links.demo ? "noopener noreferrer" : undefined}
-            className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
-              project.links.demo 
-                ? 'bg-[#ff2a2a] text-white hover:bg-red-600 hover:shadow-[0_0_20px_rgba(255,42,42,0.4)]' 
-                : 'bg-white/5 text-white/40 border border-white/10 cursor-not-allowed'
-            }`}
+            href={project.links.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-[#ff2a2a] text-white hover:bg-red-600 hover:shadow-[0_0_20px_rgba(255,42,42,0.4)]"
           >
             <ExternalLinkIcon />
-            {project.links.demo ? 'Live Demo' : 'Demo Coming Soon'}
+            Live Demo
           </a>
         )}
 

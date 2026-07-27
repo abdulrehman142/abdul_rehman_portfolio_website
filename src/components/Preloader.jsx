@@ -11,9 +11,31 @@ const Preloader = () => {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2200);
-    
+
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (isLoading) return;
+
+    const scrollToInitialSection = () => {
+      const hash = window.location.hash;
+      if (!hash || hash === '#home') {
+        window.history.replaceState(
+          null,
+          '',
+          `${window.location.pathname}${window.location.search}#home`
+        );
+        window.scrollTo({ top: 0, behavior: 'auto' });
+        return;
+      }
+      document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    // Wait for preloader exit animation so layout is stable
+    const scrollTimer = setTimeout(scrollToInitialSection, 400);
+    return () => clearTimeout(scrollTimer);
+  }, [isLoading]);
 
   return (
     <AnimatePresence>
