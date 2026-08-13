@@ -180,10 +180,17 @@ export const contentCreation = {
 
 export const leadershipList = [
   {
+    title: "Aspire Institute",
+    description:
+      "Created Canva-based promotional content and drove student engagement through targeted campaigns. Supported career readiness initiatives and early-stage outreach to expand program participation.",
+    role: "University Leader · Aug 2026 – Present",
+    badge: "Current",
+  },
+  {
     title: "The TalentBeacon",
     description:
-      "Serving as Campus Ambassador to drive student outreach, awareness campaigns, and early talent engagement.",
-    role: "Campus Ambassador",
+      "Promoted campus awareness and student engagement. Completed certified leadership training and peer outreach as Campus Ambassador.",
+    role: "Campus Ambassador · Jul 2026 – Present",
     badge: "Current",
   },
   {
@@ -192,13 +199,6 @@ export const leadershipList = [
       "Led execution support and coordination as Deputy Head, enabling event planning and team alignment.",
     role: "Deputy Head",
     badge: "Leadership",
-  },
-  {
-    title: "Aspire Institute",
-    description:
-      "Completed leadership development training focused on professional growth, outreach, and community impact.",
-    role: "University Leader",
-    badge: "Program",
   },
   {
     title: "Young Ravians Club (GCU)",
@@ -245,14 +245,26 @@ export const educationTimeline = [
 
 export const internshipsList = [
   {
+    organization: "Solacebit",
+    role: "AI/ML Intern",
+    duration: "July 2026 - August 2026",
+    skills: [
+      "Built a local RAG pipeline improving retrieval relevance by 35% with Sentence Transformers and Ollama 3.2",
+      "Developed a semantic search system cutting information lookup time by 70% across 100+ webpages",
+      "Applied retrieval-augmented generation for practical AI workflows",
+      "Experimented with embedding models and local LLM tooling",
+    ],
+    tech: ["RAG", "Sentence Transformers", "Ollama", "Semantic Search", "Python"],
+  },
+  {
     organization: "Telenor Pakistan",
     role: "B2B Intern",
-    duration: "June 2026 - Present",
+    duration: "June 2026 - August 2026",
     skills: [
-      "Lead generation and prospecting",
-      "Business outreach and pipeline support",
-      "Enterprise communication support",
-      "Market analysis and client research",
+      "Built 5+ lead databases and researched 20+ businesses, securing 6+ client meetings via a B2B pipeline",
+      "Supported GSM, IVR, and Automated Voice Agent pitching, improving communication efficiency by 20%",
+      "Lead generation, prospecting, and market research",
+      "Enterprise outreach and client communication support",
     ],
     tech: ["B2B Workflows", "CRM", "Market Research", "Enterprise Solutions"],
   },
@@ -261,24 +273,24 @@ export const internshipsList = [
     role: "Web Development Intern",
     duration: "July 2025 - September 2025",
     skills: [
-      "End-to-end development collaboration",
-      "Reusable component development",
-      "Dark mode and UI enhancements",
-      "User experience improvements",
+      "Supported end-to-end development workflows, contributing to 2–3 key deliverables",
+      "Built reusable components and implemented dark mode",
+      "Enhanced UX, improving user experience by 30%",
+      "Collaborated across the frontend engineering team",
     ],
     tech: ["React", "TypeScript", "Tailwind CSS", "Frontend Engineering"],
   },
   {
     organization: "Punjab Information Technology Board (PITB)",
-    role: "AI Engineering Intern",
+    role: "AI/ML Intern",
     duration: "July 2025 - August 2025",
     skills: [
-      "Applied ML and deep learning workflows",
-      "Neural network training and optimization",
-      "Custom OCR tool development",
-      "Model experimentation and pipeline execution",
+      "Contributed to AI/ML/DL projects, supporting 3+ core components across development pipelines",
+      "Improved task execution efficiency through structured workflows",
+      "Cross-team collaboration on applied machine learning work",
+      "Model experimentation and pipeline support",
     ],
-    tech: ["Python", "TensorFlow", "Keras", "OCR", "Machine Learning"],
+    tech: ["Python", "TensorFlow", "Keras", "Deep Learning", "Machine Learning"],
   },
 ];
 
@@ -416,10 +428,7 @@ export const footerContent = {
   copyright: `© ${new Date().getFullYear()} Abdul Rehman | Built with React`,
 };
 
-// EmailJS Configuration
-// Will read directly from environment variables in Vite (starting with VITE_)
-export const emailjsConfig = {
-  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || "YOUR_EMAILJS_SERVICE_ID",
-  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "YOUR_EMAILJS_TEMPLATE_ID",
-  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "YOUR_EMAILJS_PUBLIC_KEY",
+// Contact form posts to FormSubmit so messages land in the inbox below.
+export const contactFormConfig = {
+  endpoint: `https://formsubmit.co/ajax/${personalInfo.emails.primary}`,
 };

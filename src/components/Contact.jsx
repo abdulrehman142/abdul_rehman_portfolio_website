@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { emailjsConfig, personalInfo, socialLinks } from '../data/portfolioData';
+import { contactFormConfig, personalInfo, socialLinks } from '../data/portfolioData';
 
 const Contact = () => {
   const ref = useRef(null);
@@ -17,55 +17,47 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (status === 'sending') return; // Prevent duplicate submissions
+    if (status === 'sending') return;
 
     setStatus('sending');
 
     const form = formRef.current;
-    const firstName = form.querySelector('#firstName')?.value || '';
-    const lastName = form.querySelector('#lastName')?.value || '';
-    const email = form.querySelector('#email')?.value || '';
-    const message = form.querySelector('#message')?.value || '';
+    const firstName = form.querySelector('#firstName')?.value?.trim() || '';
+    const lastName = form.querySelector('#lastName')?.value?.trim() || '';
+    const email = form.querySelector('#email')?.value?.trim() || '';
+    const message = form.querySelector('#message')?.value?.trim() || '';
 
-    // Validate inputs
-    if (!firstName.trim() || !email.trim() || !message.trim()) {
+    if (!firstName || !email || !message) {
       setStatus('error');
       setTimeout(() => setStatus('idle'), 3000);
       return;
     }
 
-    // Check if EmailJS is configured (checking both placeholder values and falsy states)
-    const isConfigured = 
-      emailjsConfig.serviceId && 
-      emailjsConfig.serviceId !== 'YOUR_EMAILJS_SERVICE_ID' &&
-      emailjsConfig.templateId && 
-      emailjsConfig.templateId !== 'YOUR_EMAILJS_TEMPLATE_ID' &&
-      emailjsConfig.publicKey && 
-      emailjsConfig.publicKey !== 'YOUR_EMAILJS_PUBLIC_KEY';
-
-    if (!isConfigured) {
-      // EmailJS not configured — fallback to prefilled mailto
-      const mailtoLink = `mailto:${personalInfo.emails.primary}?subject=Portfolio Contact from ${firstName} ${lastName}&body=${encodeURIComponent(`From: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`)}`;
-      window.open(mailtoLink, '_blank');
-      setStatus('success');
-      formRef.current.reset();
-      setTimeout(() => setStatus('idle'), 3000);
-      return;
-    }
-
-    // EmailJS integration
     try {
-      const emailjs = await import('@emailjs/browser');
-      await emailjs.sendForm(
-        emailjsConfig.serviceId,
-        emailjsConfig.templateId,
-        formRef.current,
-        emailjsConfig.publicKey
-      );
+      const response = await fetch(contactFormConfig.endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: `${firstName} ${lastName}`.trim(),
+          email,
+          message,
+          _subject: `Portfolio Contact from ${firstName} ${lastName}`.trim(),
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
       setStatus('success');
       formRef.current.reset();
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error('Contact form error:', error);
       setStatus('error');
     }
 
@@ -97,7 +89,6 @@ const Contact = () => {
             <div className="text-xs font-bold tracking-[0.2em] uppercase opacity-90">
               Reach Me
             </div>
-            {/* LinkedIn Quick Link */}
             <a 
               href={socialLinks.linkedin} 
               target="_blank" 
@@ -111,7 +102,6 @@ const Contact = () => {
 
           <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-12 md:gap-16 w-full">
             <div className="flex flex-col md:flex-row gap-12 md:gap-20 w-full">
-              {/* Left Column */}
               <div className="flex-1 flex flex-col gap-10">
                 <div className="relative">
                   <input 
@@ -136,7 +126,7 @@ const Contact = () => {
                   <input 
                     type="email" 
                     id="email" 
-                    name="user_email"
+                    name="email"
                     placeholder="Email" 
                     required
                     className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium rounded-none"
@@ -144,7 +134,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Right Column */}
               <div className="flex-1 flex flex-col">
                 <div className="relative h-full flex flex-col">
                   <textarea 
@@ -158,9 +147,7 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Bottom Section */}
             <div className="flex flex-col md:flex-row gap-12 mt-4">
-              {/* Left text */}
               <div className="flex-1 flex items-start gap-4 text-sm font-medium text-white/90">
                 <input 
                   type="checkbox" 
@@ -173,7 +160,6 @@ const Contact = () => {
                 </label>
               </div>
 
-              {/* Right text & button */}
               <div className="flex-1 flex flex-col gap-8 text-xs text-white/70 font-medium">
                 <p className="leading-relaxed max-w-[400px]">
                   Your message will be sent directly to my inbox. I typically respond within 24-48 hours.
