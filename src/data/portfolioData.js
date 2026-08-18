@@ -249,12 +249,12 @@ export const internshipsList = [
     role: "AI/ML Intern",
     duration: "July 2026 - August 2026",
     skills: [
-      "Built a local RAG pipeline improving retrieval relevance by 35% with Sentence Transformers and Ollama 3.2",
-      "Developed a semantic search system cutting information lookup time by 70% across 100+ webpages",
-      "Applied retrieval-augmented generation for practical AI workflows",
-      "Experimented with embedding models and local LLM tooling",
+      "Built Scrapify, a deployed RAG product that scrapes any website, chunks and embeds the page, then answers questions with Gemini 3.5 Flash from retrieved context only",
+      "Built Medirator 2.0, an AI hospital knowledge assistant over ~1,270 synthetic records with keyword retrieval and Gemini-grounded SOAP, medicine, inventory, and equipment cards",
+      "Shipped both apps end-to-end: React/TypeScript frontends on Netlify and FastAPI backends on Render, without a vector database or local LLM",
+      "Applied retrieval-augmented generation for practical, deployable AI workflows",
     ],
-    tech: ["RAG", "Sentence Transformers", "Ollama", "Semantic Search", "Python"],
+    tech: ["RAG", "Gemini API", "FastAPI", "React", "TypeScript", "Python"],
   },
   {
     organization: "Telenor Pakistan",
