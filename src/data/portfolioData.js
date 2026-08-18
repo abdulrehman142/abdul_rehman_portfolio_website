@@ -339,8 +339,30 @@ export const softSkillsList = [
 
 export const projects = [
   {
-    id: "medirator-2",
+    id: "scrapify",
     number: "01",
+    badge: "Web RAG Chat",
+    title: "Scrapify",
+    description:
+      "Scrape any website, then chat with it. Paste a URL — the backend fetches the page, chunks and embeds it into a local knowledge base. Ask a question and it retrieves the closest chunks; Gemini 3.5 Flash answers from that context only. No vector database or local LLM: embeddings and generation both go through Gemini so it deploys on a small Render instance.",
+    techTags: [
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "Gemini API",
+      "BeautifulSoup",
+      "NumPy",
+    ],
+    links: {
+      github: "https://github.com/abdulrehman142/scrapify_frontend",
+      githubBackend: "https://github.com/abdulrehman142/scrapify_backend",
+      demo: "https://scrapifyit.netlify.app",
+    },
+    isFlagship: true,
+  },
+  {
+    id: "medirator-2",
+    number: "02",
     badge: "Hospital RAG Assistant",
     title: "Medirator 2.0",
     description:
@@ -361,7 +383,7 @@ export const projects = [
   },
   {
     id: "medirator",
-    number: "02",
+    number: "03",
     badge: "AI Healthcare",
     title: "Medirator",
     description:
@@ -382,7 +404,7 @@ export const projects = [
   },
   {
     id: "fixify",
-    number: "03",
+    number: "04",
     badge: "Marketplace Platform",
     title: "Fixify",
     description:
@@ -396,7 +418,7 @@ export const projects = [
   },
   {
     id: "curator",
-    number: "04",
+    number: "05",
     badge: "Recommendation System",
     title: "Curator",
     description:
