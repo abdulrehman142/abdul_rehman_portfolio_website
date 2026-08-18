@@ -339,8 +339,29 @@ export const softSkillsList = [
 
 export const projects = [
   {
-    id: "medirator",
+    id: "medirator-2",
     number: "01",
+    badge: "Hospital RAG Assistant",
+    title: "Medirator 2.0",
+    description:
+      "An AI hospital knowledge assistant for a synthetic Houston hospital. Sign in with Google, open Medibot, and ask in plain English about patients, medicines, inventory, and instruments. Keyword search over ~1,270 local JSON records feeds Gemini, which answers from that context only — results as SOAP, medicine, stock, and equipment cards. Demo data only; not for clinical decisions.",
+    techTags: [
+      "React",
+      "Gemini API",
+      "RAG",
+      "Google Auth",
+      "Netlify",
+      "Render",
+    ],
+    links: {
+      github: "https://github.com/abdulrehman142/medirator2_frontend",
+      demo: "https://medirator2.netlify.app",
+    },
+    isFlagship: true,
+  },
+  {
+    id: "medirator",
+    number: "02",
     badge: "AI Healthcare",
     title: "Medirator",
     description:
@@ -357,11 +378,11 @@ export const projects = [
       github: "https://github.com/abdulrehman142",
       demo: "https://medirator.netlify.app/",
     },
-    isFlagship: true,
+    isFlagship: false,
   },
   {
     id: "fixify",
-    number: "02",
+    number: "03",
     badge: "Marketplace Platform",
     title: "Fixify",
     description:
@@ -375,7 +396,7 @@ export const projects = [
   },
   {
     id: "curator",
-    number: "03",
+    number: "04",
     badge: "Recommendation System",
     title: "Curator",
     description:
