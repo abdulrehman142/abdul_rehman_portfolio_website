@@ -1,4 +1,3 @@
-import React from 'react';
 import { educationTimeline, leadershipList } from '../data/portfolioData';
 
 const TimelineCard = ({ item, align = 'left', delay = '0' }) => {

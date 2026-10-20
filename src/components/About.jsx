@@ -1,4 +1,3 @@
-import React from 'react';
 import stackImage from '../portfolio_assets/pfp.png';
 import { aboutContent } from '../data/portfolioData';
 

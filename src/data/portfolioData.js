@@ -15,7 +15,7 @@ export const personalInfo = {
     secondary: "",
   },
   summary:
-    "Aspiring AI/ML Engineer and Software Developer with hands-on experience in AI, machine learning, full-stack development, and enterprise technology. Passionate about building scalable web and intelligent systems that solve real-world problems.",
+    "Computer Science student and software engineer focused on AI/ML, full-stack products, and practical automation. I build reliable systems with Python, FastAPI, React, TypeScript, and modern MLOps workflows.",
   resumeUrl: "/Resume.pdf",
 };
 
@@ -23,7 +23,7 @@ export const socialLinks = {
   github: "https://github.com/abdulrehman142",
   linkedin: "https://www.linkedin.com/in/abdul-rehman2020",
   portfolio: "#home",
-  instagram: "https://portfolio-website-abdul-rehman.netlify.app/",
+  instagram: "",
 };
 
 export const heroContent = {

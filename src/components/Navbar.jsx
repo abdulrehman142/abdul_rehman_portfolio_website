@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { personalInfo } from '../data/portfolioData';
 
 const Navbar = () => {
@@ -24,9 +24,9 @@ const Navbar = () => {
     <nav 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isOpen 
-          ? 'bg-[#ff2a2a] py-4'
+          ? 'bg-[#0b1220] backdrop-blur-xl py-4 shadow-lg'
           : isScrolled 
-            ? 'bg-transparent py-4' 
+            ? 'bg-[#0b1220] backdrop-blur-xl py-4 shadow-lg shadow-black/10' 
             : 'bg-transparent py-6'
       }`}
     >
@@ -35,7 +35,7 @@ const Navbar = () => {
         {/* Left Side: Logo/Name */}
         <div className="flex items-center">
           <a href="#home" className="text-white text-2xl font-black tracking-tight whitespace-nowrap">
-            {personalInfo.brandName}<span className="text-red-500">.</span>
+            {personalInfo.brandName}            <span className="text-[#ff2a2a]">.</span>
           </a>
         </div>
 
@@ -45,7 +45,7 @@ const Navbar = () => {
             <a 
               key={link} 
               href={`#${link.toLowerCase()}`}
-              className="text-white/80 hover:text-white font-medium relative group transition-colors duration-300"
+              className="text-white/75 hover:text-white font-medium relative group transition-colors duration-300"
             >
               {link}
               {/* Smooth hover underline */}

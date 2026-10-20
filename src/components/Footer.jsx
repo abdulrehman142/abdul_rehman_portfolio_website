@@ -1,4 +1,3 @@
-import React from 'react';
 import { personalInfo, socialLinks, footerContent } from '../data/portfolioData';
 
 const Footer = () => {

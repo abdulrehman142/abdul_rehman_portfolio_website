@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import heroImage from '../portfolio_assets/hero_image.png';
 import { heroContent, socialLinks } from '../data/portfolioData';
 
 const Hero = () => {
@@ -14,14 +13,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative w-full h-screen overflow-hidden bg-black">
-      {/* Background Image */}
-      <img
-        src={heroImage}
-        alt=""
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-      />
-      <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/80 via-black/40 to-black/30" />
+    <section id="home" className="relative w-full min-h-screen overflow-hidden bg-[#7f011f]">
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_75%_20%,rgba(245,235,208,0.18),transparent_28%),linear-gradient(135deg,#7f011f_0%,#560016_60%,#30000c_100%)]" />
+      <div className="absolute -right-24 top-1/4 z-[1] h-72 w-72 rounded-full border border-[#f5ebd0]/20 bg-[#f5ebd0]/5 blur-sm md:h-[32rem] md:w-[32rem]" />
+      <div className="absolute bottom-0 left-0 z-[1] h-1/2 w-full bg-gradient-to-t from-black/25 to-transparent" />
 
       {/* Left Floating Social Bar for Large Screens */}
       <div className="hidden lg:flex flex-col gap-6 fixed left-6 top-1/2 -translate-y-1/2 z-50 mix-blend-difference">
@@ -82,7 +77,7 @@ const Hero = () => {
           {/* Main Heading */}
           <h1 
             data-aos="fade-up"
-            className="text-white text-3xl md:text-5xl font-bold mb-4 tracking-tight"
+            className="text-[#f5ebd0] text-3xl md:text-5xl font-bold mb-4 tracking-tight leading-tight"
           >
             {heroContent.greeting}, <br /> <span className="text-transparent [-webkit-text-stroke:1.5px_white]">{heroContent.titleHighlight}</span>
           </h1>
@@ -91,7 +86,7 @@ const Hero = () => {
           <p 
             data-aos="fade-up"
             data-aos-delay="200"
-            className="text-white text-sm md:text-lg font-semibold mb-8 max-w-md drop-shadow-md"
+            className="text-[#f5ebd0]/85 text-sm md:text-lg font-semibold mb-8 max-w-md drop-shadow-md"
           >
             {heroContent.subtitle}
           </p>
@@ -104,14 +99,14 @@ const Hero = () => {
           >
             <a 
               href={heroContent.ctaPrimary.href}
-              className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md"
+              className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-[#f5ebd0] text-[#7f011f] font-semibold hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-md"
             >
               {heroContent.ctaPrimary.text}
             </a>
             
             <a 
               href={heroContent.ctaSecondary.href}
-              className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-black/40 border border-white text-white font-semibold hover:bg-black/60 transition-all duration-300 backdrop-blur-md"
+              className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-[#7f011f]/40 border border-[#f5ebd0]/70 text-[#f5ebd0] font-semibold hover:bg-[#7f011f]/70 transition-all duration-300 backdrop-blur-md"
             >
               {heroContent.ctaSecondary.text}
             </a>
@@ -119,7 +114,7 @@ const Hero = () => {
             <a 
               href={heroContent.ctaResume.href}
               download
-              className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-transparent border border-white/50 text-white font-semibold hover:bg-white hover:text-black transition-all duration-300 backdrop-blur-md flex items-center gap-2"
+              className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-transparent border border-[#f5ebd0]/60 text-[#f5ebd0] font-semibold hover:bg-[#f5ebd0] hover:text-[#7f011f] transition-all duration-300 backdrop-blur-md flex items-center gap-2"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
